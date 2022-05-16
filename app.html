@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Generator</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer type="module">
+      import {
+        html,
+        render,
+      } from "https://unpkg.com/htm/preact/index.mjs?module";
+      import { useState } from "https://unpkg.com/preact/hooks/dist/hooks.module.js?module";
+
+      function App() {
+        const [number, setNumber] = useState(0);
+
+        return html`
+          <div class="container">
+            <h1>NENSS</h1>
+            <p>
+              <button
+                onClick=${async () => {
+                  const response = await fetch("/randomNumber");
+                  setNumber(await response.json());
+                }}
+              >
+                Get random number
+              </button>
+            </p>
+            <p>${number}</p>
+          </div>
+        `;
+      }
+
+      render(html`<${App} />`, document.body);
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .container {
+        background-color: lightsalmon;
+        gap: 10px;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body></body>
+</html>
