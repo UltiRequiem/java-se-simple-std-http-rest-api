@@ -2,17 +2,21 @@
 
 [Based on this Stack Overflow Question](https://stackoverflow.com/questions/3732109)
 
-## Support
+![API Screenshot](./screenshot.png)
 
-Open an Issue, I will check it a soon as possible 👀
+## Run
 
-If you want to hurry me up a bit
-[send me a tweet](https://twitter.com/UltiRequiem) 😆
+First compile:
 
-Consider [supporting me on Patreon](https://patreon.com/UltiRequiem) if you like
-my work 🙏
+```sh
+javac Server.java
+```
 
-Don't forget to start the repo ⭐
+Then:
+
+```sh
+java Server
+```
 
 ## Licence
 
